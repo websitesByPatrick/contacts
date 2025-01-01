@@ -1,5 +1,5 @@
 'use server'
-import { redirect } from "next/navigation"
+
 import prisma from "./db"
 
 export async function createContact(formdata: FormData) { 
@@ -12,5 +12,5 @@ export async function createContact(formdata: FormData) {
             phone: formdata.get('phone') as string
         }
     })
-    redirect('/database/all')
+    
 }
