@@ -4,7 +4,7 @@ import prisma from "./db"
 
 export async function createContact(formdata: FormData) { 
     
-     await prisma.contact.create({
+     const contacts = await prisma.contact.create({
         data: {
             fname: formdata.get('fname') as string,
             lname: formdata.get('lname') as string,
