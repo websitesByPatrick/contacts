@@ -1,6 +1,5 @@
-'use client';
+"use client";
 import React from "react";
-
 
 import { redirect } from "next/navigation";
 interface Props {
@@ -27,16 +26,15 @@ export const ViewContacts = (props: Props) => {
       <tbody>
         {props.data.map((contact) => (
           <tr
-          onClick={() => redirect('/database/edit')}
+            onClick={() => redirect(`/database/${contact.id}`)}
             key={contact.id}
             className="text-center border border-zinc-700 text-lg even:bg-zinc-800 odd:bg-zinc-700 h-9 hover:bg-zinc-200 hover:text-zinc-900 transition-all"
           >
-            
             <td>{contact.fname}</td>
+
             <td>{contact.lname}</td>
             <td>{contact.email}</td>
             <td>{contact.phone}</td>
-
           </tr>
         ))}
       </tbody>
