@@ -1,6 +1,6 @@
 "use server";
 import React from "react";
-import { getContact } from "@/lib/serverActions"
+import { getContact } from "@/lib/serverActions";
 import UpdateForm from "@/components/UpdateForm";
 
 interface Params {
@@ -8,15 +8,19 @@ interface Params {
 }
 
 const EditPage = async ({ params }: { params: Params }) => {
+
   const contact = await getContact(params.contact);
 
+  
   return (
     <>
       <h2>Update Contact</h2>
-      
-      {contact ? <UpdateForm contactData={contact} /> : <p>Contact not found</p>}
 
-    
+      {contact ? (
+        <UpdateForm contactData={contact} />
+      ) : (
+        <p>Contact not found</p>
+      )}
     </>
   );
 };
