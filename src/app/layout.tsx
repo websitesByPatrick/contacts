@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { roboto } from "@/lib/fonts";
-import { Heading } from "@/components/Heading";
-import { Navbar } from "@/components/Navbar";
+import { roboto } from "@/lib/fonts/fonts";
+import { Header } from "@/components/Header/Header";
+import { Navbar } from "@/components/Navbar/Navbar";
 
 export const metadata: Metadata = {
   title: "Contact Keeper",
@@ -16,12 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.className} bg-zinc-950 text-zinc-100 min-h-screen`}
-      >
-        <Heading />
-        <Navbar />
-        {children}
+      <body className={`${roboto.className} bg-black box-border`}>
+        <div className="flex flex-col items-center py-2 gap-4 w-[1280px] mx-auto">
+          <Header />
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );

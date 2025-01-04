@@ -1,0 +1,49 @@
+.css {
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    border-radius: 10px;
+}
+.css th {
+    padding: 10px;
+    border-bottom: 1px solid var(--color-bg-secondary);
+    font-size: 1.4rem;
+    font-weight: 900;
+    background-color: var(--color-bg-th);
+    color: var(--color-text-th);
+}
+
+.css td {
+    padding: 10px;
+    border-bottom: 1px solid var(--color-bg-secondary);
+    font-size: 1.3rem;
+    text-align: center;
+    width: 24%;
+}
+
+.css td:nth-child(4) {
+    width: 10%;
+}
+.css td:nth-child(5) {
+    width: 7%;
+}
+.css td:nth-child(6) {
+    width: 7%;
+}
+.css td:nth-child(7) {
+    width: 2%;
+    font-size: 1.7rem;
+}
+.css td:nth-child(8) {
+    width: 2%;
+    font-size: 1.7rem;
+}
+
+.css tr:nth-child(even) {
+    background-color: var(--color-bg-tr-even);
+}
+.css tr:nth-child(odd) {
+    background-color: var(--color-bg-tr-odd);
+}

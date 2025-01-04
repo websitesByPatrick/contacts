@@ -1,0 +1,36 @@
+
+  /* Navbar  */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-navbar-bg);
+    height: 60px;
+    border-top: 2px solid var(--color-navbar-border);
+    border-bottom: 2px solid var(--color-navbar-border);
+    width: 100%;
+  }
+  /* Navbar Sections */
+  .navbar div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    margin: 0 20px
+  }
+  
+  /* NavItem */
+  .navbar a {
+    color: var(--color-navitem-text);
+    background-color: var(--color-navitem-bg);
+    padding: 5px 10px;
+    width: 8rem;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--color-navitem-border);
+    transition: all 0.3s;
+  }
+  .navbar a:hover {
+    background-color: var(--color-navitem-hover-bg);
+    color: var(--color-navitem-hover-text);
+    border: 1px solid var(--color-navitem-border-hover);
+  }
