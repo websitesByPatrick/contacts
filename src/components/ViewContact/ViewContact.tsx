@@ -1,10 +1,16 @@
 import React from "react";
-import prisma from "@/lib/dbConnect";
+
 import { dateToString } from "@/lib/Utilities/dateToString";
 import styles from "@/components/ViewContact/viewContacts.module.css";
+import Link from "next/link";
+
+import { getAllContacts } from "@/lib/serverActions/getAllContacts";
 
 
 const ViewContact = async () => {
+
+  const contacts = getAllContacts()  
+
   return (
     <table className={styles.css}>
       <thead>
@@ -21,7 +27,7 @@ const ViewContact = async () => {
       </thead>
 
       <tbody>
-        {(await prisma.contact.findMany()).map((contact) => (
+        {((await contacts).map((contact) => (
           <tr key={contact.id}>
             <td>{contact.fname}</td>
             <td>{contact.lname}</td>
@@ -31,9 +37,11 @@ const ViewContact = async () => {
             <td>{dateToString(contact.updatedAt)}</td>
             <td>✍️</td>
 
-            <td>🗑️</td>
+            <td>
+              <Link href={`/contacts/delete/${contact.id}`}>🗑️</Link>
+            </td>
           </tr>
-        ))}
+        )))}
       </tbody>
     </table>
   );

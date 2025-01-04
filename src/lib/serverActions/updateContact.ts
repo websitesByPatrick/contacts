@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import prisma from "@/lib/dbConnect"
+import { prisma } from "@/lib/dbConnect"
 
 export async function updateContact(id: string, formdata: FormData) {
   await prisma.contact.update({
