@@ -1,5 +1,5 @@
 
-import  { deleteContact }  from '@/lib/serverActions'
+
 import React from 'react'
 
 
@@ -10,7 +10,7 @@ interface DeleteContactProps {
 
 const DeleteContact = (props: DeleteContactProps) => {
 
-    deleteContact(props.id)
+   
     
   return (
     <div className='text-gray-50'>Test {props.id}</div>
