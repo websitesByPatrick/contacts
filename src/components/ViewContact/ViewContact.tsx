@@ -1,15 +1,14 @@
+
 import React from "react";
 
 import { dateToString } from "@/lib/Utilities/dateToString";
 import styles from "@/components/ViewContact/viewContacts.module.css";
-import Link from "next/link";
+import Form from "next/form";
 
-import { getAllContacts } from "@/lib/serverActions/getAllContacts";
-
+import { deleteContact, getAllContacts } from "@/lib/serverActions";
 
 const ViewContact = async () => {
-
-  const contacts = getAllContacts()  
+  const contacts = getAllContacts();
 
   return (
     <table className={styles.css}>
@@ -27,7 +26,7 @@ const ViewContact = async () => {
       </thead>
 
       <tbody>
-        {((await contacts).map((contact) => (
+        {(await contacts).map((contact) => (
           <tr key={contact.id}>
             <td>{contact.fname}</td>
             <td>{contact.lname}</td>
@@ -38,10 +37,13 @@ const ViewContact = async () => {
             <td>✍️</td>
 
             <td>
-              <Link href={`/contacts/delete/${contact.id}`}>🗑️</Link>
+              <Form action={deleteContact} name={"id"} defaultValue={contact.id} >
+                <input disabled name={"id"} defaultValue={contact.id}  />
+                <button type="submit">🗑️</button>
+              </Form>
             </td>
           </tr>
-        )))}
+        ))}
       </tbody>
     </table>
   );

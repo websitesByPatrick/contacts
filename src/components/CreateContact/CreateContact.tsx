@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "next/form";
-import { createContact } from "@/lib/serverActions/createContact";
+import { createContact } from "@/lib/serverActions";
 import styles from "@/components/CreateContact/createContact.module.css";
 import CancelButton from "../Buttons/CancelButton";
 import SubmitButton from "../Buttons/SubmitButton";

@@ -1,5 +1,5 @@
 
-import  deleteContact  from '@/lib/serverActions/deleteContact'
+import  { deleteContact }  from '@/lib/serverActions'
 import React from 'react'
 
 
