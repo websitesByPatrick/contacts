@@ -39,18 +39,19 @@ export async function updateContact(id: string, formdata: FormData) {
   redirect("/contacts/all");
 }
 
-export async function deleteContact(formData: FormData) {
-  const id = formData.get('id') as string
-    console.log("Before Delete", id);
+export async function deleteContact(id: string) {
+      
     await prisma.contact.delete({
       where: { id },
     });
-    console.log("After Delete", id);
+    
     revalidatePath("/contacts/all");
     redirect("/contacts/all");
   }
 
-  export async function getAllContacts() {
+  export async function getAllContacts()
+
+  {
     return await prisma.contact.findMany();
   }
   

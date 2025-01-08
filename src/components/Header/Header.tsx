@@ -8,6 +8,7 @@ export const Header = () => {
       className={` ${styles.header} ${reggaeOne.className}` } 
     >
       <h1>The Contact Keeper</h1>
+      <h2>v2</h2>
     </div>
   );
 };

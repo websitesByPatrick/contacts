@@ -3,9 +3,9 @@ import React from "react";
 
 import { dateToString } from "@/lib/Utilities/dateToString";
 import styles from "@/components/ViewContact/viewContacts.module.css";
-import Form from "next/form";
+import DeleteButton from "./DeleteButton";
 
-import { deleteContact, getAllContacts } from "@/lib/serverActions";
+import { getAllContacts } from "@/lib/serverActions";
 
 const ViewContact = async () => {
   const contacts = getAllContacts();
@@ -37,10 +37,7 @@ const ViewContact = async () => {
             <td>✍️</td>
 
             <td>
-              <Form action={deleteContact} name={"id"} defaultValue={contact.id} >
-                <input disabled name={"id"} defaultValue={contact.id}  />
-                <button type="submit">🗑️</button>
-              </Form>
+              <DeleteButton id={contact.id}/>
             </td>
           </tr>
         ))}
